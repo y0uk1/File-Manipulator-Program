@@ -12,6 +12,7 @@ def execute_function(args):
     elif args[1] == 'replace-string':
         replace_string(args[2], args[3], args[4])
 
+
 def validator(args):
     # 引数の数が適切か
     if len(args) < 4:
@@ -36,6 +37,7 @@ def validator(args):
         if args[4].isdigit():
             raise TypeError('Argument for newstring is not string')
 
+
 def reverse(input_path, output_path):
     with open(input_path, 'r') as f:
         contents = f.read()
@@ -45,12 +47,14 @@ def reverse(input_path, output_path):
     with open(output_path, 'w') as f:
         f.write(reversed_contents)
 
+
 def copy(input_path, output_path):
     with open(input_path, 'r') as f:
         contents = f.read()
     
     with open(output_path, 'w') as f:
         f.write(contents)
+
 
 def duplicate_contents(input_path, n):
     with open(input_path, 'r') as f:
@@ -61,9 +65,10 @@ def duplicate_contents(input_path, n):
     with open(input_path, 'w') as f:
         f.write(manipulated_contents) 
 
+
 def replace_string(input_path, needle, new_string):
     with open(input_path, 'r') as f:
-        contents =  f.read()
+        contents = f.read()
     
     contents = contents.replace(needle, new_string)
 
